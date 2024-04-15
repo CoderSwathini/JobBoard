@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title> Online Job Portal</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+        <link  href="{{ url_for('static', filename='css/bootstrap.min.css') }}"  rel="stylesheet">
+
+        <link  href="{{ url_for('static', filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+
+        <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}"  rel="stylesheet">
+
+        <link href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}" rel="stylesheet">
+
+        <link href="{{ url_for('static', filename='css/tooplate-gotto-job.css') }}"     rel="stylesheet">
+
+
+    
+        <!-- Theme CSS -->  
+       
+        
+<!--
+
+Tooplate 2134 Gotto Job
+
+https://www.tooplate.com/view/2134-gotto-job
+
+Bootstrap 5 HTML CSS Template
+
+-->
+    </head>
+    
+    <body id="top">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img    src="{{ url_for('static', filename='images/logo.png') }}"  class="img-fluid logo-image">
+
+                    <div class="d-flex flex-column">
+                        <strong class="logo-text">JOBS</strong>
+                        <small class="logo-slogan">Online Job Portal</small>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-center ms-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Homepage</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/listjob">View Jobs</a>
+                        </li>   
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/postjob">Post Jobs</a>
+                        </li>  
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock %}   
+
+
+            
+        </main>
+
+        <footer class="site-footer">
+        
+
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-12 d-flex align-items-center">
+                            <p class="copyright-text">Copyrights 2024 © Created by Swathini</p>
+
+                            
+                        </div>                     
+
+                        <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" 
+                        href="#top"></a>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"  ></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
+        <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}" ></script>
+        <script src="{{ url_for('static', filename='js/counter.js') }}" ></script>
+        <script src="{{ url_for('static', filename='js/custom.js') }}" ></script>
+
+    </body>
+</html>
